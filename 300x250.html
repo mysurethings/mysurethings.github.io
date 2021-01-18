@@ -1,0 +1,325 @@
+
+<style>
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.container{
+	position:relative;
+	width:300px;
+	height:250px;
+	background:#c1d5e8;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 300% 300%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.logo{
+	position:absolute;
+	z-index:2;
+	bottom: 3px;
+	right: 2px;
+}
+.logo img{}
+.button {
+	display: inline-block;
+    border-radius: 4px;
+    background-color: #3d83cc;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 0px 2px 0px;
+    width: 165px;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: absolute;
+	z-index:2;
+    bottom: 15px;
+    left: 25px;
+	-webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.6); 
+	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.6);
+}
+.button:active{
+	-webkit-box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.92); 
+	box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.92);
+}
+.button:focus { outline: none;}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  border:0px;
+}
+
+.button span:after {
+    content: '\00bb';
+    opacity: 0;
+    top: -2px;
+    right: -10px;
+    transition: 0.5s;
+    position: absolute;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.header{color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+	position:absolute;
+	z-index:5;
+	background-color: rgba(0, 0, 0, 0.4);
+    width: 280px;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+	-webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.6); 
+	box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.6);
+}
+.player{ 
+	background-image: url("player.png");
+	height:250px;
+	width:159px;
+	position:absolute;
+	top:0px;
+	right:0px;
+	background-repeat: no-repeat;
+	z-index:1
+}
+#bets{ 
+	overflow: hidden;
+    height: 90px;
+    width: 280px;
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    z-index: 1;
+
+}
+
+.photobanner {
+  position:absolute; 
+  top:0px; 
+  left:0px; 
+  overflow:hidden; 
+  white-space: nowrap;
+  animation: bannermove 40s linear infinite;
+}
+
+.photobanner img {    
+  display: block;
+  opacity: 0.8;
+}
+
+@keyframes bannermove {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(0, -50%);
+  }
+}
+ .content {
+	position: absolute;
+	height: 30px;
+	overflow: hidden;
+	font-family: 'Lato', sans-serif;
+	font-size: 22px;
+	line-height: 10px;
+	color: #ecf0f1;
+	width: 290px;
+	top: 170px;
+	z-index:3;
+}
+ .content__container {
+	 font-weight: 600;
+	 overflow: hidden;
+	 height: 30px;
+
+}
+
+ .content__container__list {
+	 margin-top: 0;
+	 margin-left: -30px;
+	 text-align: center;
+	 list-style: none;
+	 -webkit-animation-name: change;
+	 -webkit-animation-duration: 10s;
+	 -webkit-animation-iteration-count: infinite;
+	 animation-name: change;
+	 animation-duration: 10s;
+	 animation-iteration-count: infinite;
+}
+ .content__container__list__item {
+	 line-height: 30px;
+	 margin: 0;
+}
+ @-webkit-keyframes opacity {
+	 0%, 100% {
+		 opacity: 0;
+	}
+	 50% {
+		 opacity: 1;
+	}
+}
+ @-webkit-keyframes change {
+	 0%, 12.66%, 100% {
+		 transform: translate3d(0, 0, 0);
+	}
+	 16.66%, 29.32% {
+		 transform: translate3d(0, -25%, 0);
+	}
+	 33.32%, 45.98% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 49.98%, 62.64% {
+		 transform: translate3d(0, -75%, 0);
+	}
+	 66.64%, 79.3% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 83.3%, 95.96% {
+		 transform: translate3d(0, -25%, 0);
+	}
+}
+ @-o-keyframes opacity {
+	 0%, 100% {
+		 opacity: 0;
+	}
+	 50% {
+		 opacity: 1;
+	}
+}
+ @-o-keyframes change {
+	 0%, 12.66%, 100% {
+		 transform: translate3d(0, 0, 0);
+	}
+	 16.66%, 29.32% {
+		 transform: translate3d(0, -25%, 0);
+	}
+	 33.32%, 45.98% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 49.98%, 62.64% {
+		 transform: translate3d(0, -75%, 0);
+	}
+	 66.64%, 79.3% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 83.3%, 95.96% {
+		 transform: translate3d(0, -25%, 0);
+	}
+}
+ @-moz-keyframes opacity {
+	 0%, 100% {
+		 opacity: 0;
+	}
+	 50% {
+		 opacity: 1;
+	}
+}
+ @-moz-keyframes change {
+	 0%, 12.66%, 100% {
+		 transform: translate3d(0, 0, 0);
+	}
+	 16.66%, 29.32% {
+		 transform: translate3d(0, -25%, 0);
+	}
+	 33.32%, 45.98% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 49.98%, 62.64% {
+		 transform: translate3d(0, -75%, 0);
+	}
+	 66.64%, 79.3% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 83.3%, 95.96% {
+		 transform: translate3d(0, -25%, 0);
+	}
+}
+ @keyframes opacity {
+	 0%, 100% {
+		 opacity: 0;
+	}
+	 50% {
+		 opacity: 1;
+	}
+}
+ @keyframes change {
+	 0%, 12.66%, 100% {
+		 transform: translate3d(0, 0, 0);
+	}
+	 16.66%, 29.32% {
+		 transform: translate3d(0, -25%, 0);
+	}
+	 33.32%, 45.98% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 49.98%, 62.64% {
+		 transform: translate3d(0, -75%, 0);
+	}
+	 66.64%, 79.3% {
+		 transform: translate3d(0, -50%, 0);
+	}
+	 83.3%, 95.96% {
+		 transform: translate3d(0, -25%, 0);
+	}
+}
+.text{position: absolute;
+    padding: 5px;
+    top: 65px;
+    margin: 10px;
+    width: 270px;
+    text-align: center;
+    background: #ffffffba;
+    z-index: 5;
+	color:#156b7a;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+	}
+ 
+</style>
+
+<div class="container">
+<div class="header"><b>STOP GAMBLING AND START INVESTING!</b></div>
+<div class="player"></div>
+<div class="text">Earn money betting with your head!</div>
+<div id="bets"><div class="photobanner"><img src="betsmin.png"><img src="betsmin.png"></div></div>
+<div class="content">
+		  <div class="content__container">
+			<ul class="content__container__list">
+			  <li class="content__container__list__item">+40 sure bets daily</li>
+			  <li class="content__container__list__item">+100 value bets daily</li>
+			  <li class="content__container__list__item">Bet calculators</li>
+			  <li class="content__container__list__item">24/7 updated</li>
+			</ul>
+		  </div>
+</div>
+<a id="link" href="https://mysurethings.com/affiliates/?partner=">
+<button class="button" style="vertical-align:middle"><span>GET STARTED</span></button></a>
+<div class="logo"><img src="logo2.png"><div>
+</div>
+<script type="text/javascript">
+var url_string = window.location.href;
+var url = new URL(url_string);
+var c = url.searchParams.get("c");
+document.getElementById("link").href += c; 
+</script>
